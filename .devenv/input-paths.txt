@@ -1,0 +1,3 @@
+/home/david/code/kölappar/devenv.lock
+/home/david/code/kölappar/devenv.nix
+/home/david/code/kölappar/devenv.yaml

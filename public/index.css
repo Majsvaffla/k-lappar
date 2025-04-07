@@ -1,0 +1,55 @@
+html {
+    background-color: beige;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+}
+
+section {
+    font-family: Tahoma;
+    font-size: 6vw;
+    text-align: center;
+    padding: 6vw;
+    white-space: nowrap;
+}
+
+section.hidden {
+    display: none;
+}
+
+img {
+    width: 100%;
+}
+
+section#options:not(.hidden) {
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: 2vh;
+}
+
+
+section#display {
+    user-select: none;
+}
+
+section#display p {
+    font-size: 50vh;
+    margin: 0;
+}
+
+button {
+    font-family: Tahoma;
+    font-size: 6vw;
+    padding: 2vw;
+    border-radius: 10px;
+    border: 2px solid mistyrose;
+    background-color: lightblue;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <meta charset="UTF-8">
+        <title>Tag en kölapp</title>
+        <meta name="description" content="Tag en kölapp" />
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="manifest" href="site.webmanifest">
+        <link href="index.css" rel="stylesheet" />
+    </head>
+    <script type="text/javascript">
+        function getLineNumber() {
+            const minCeiled = Math.ceil(24);
+            const maxFloored = Math.floor(108);
+            return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
+        }
+
+        function toggleNumberInLine() {
+            const displayElement = document.querySelector("#display")
+            const optionsElement = document.querySelector("#options")
+            displayElement.querySelector("p").innerText = getLineNumber(24, 108);
+            displayElement.classList.toggle("hidden");
+            optionsElement.classList.toggle("hidden");
+            setTimeout(() => { location.href="/qr/" }, 4000);
+        }
+    </script>
+    <body>
+        <main>
+            <section id="options">
+                <button type="button" onclick="toggleNumberInLine()">Anton</button>
+                <button type="button" onclick="toggleNumberInLine()">Cecilia</button>
+                <button type="button" onclick="toggleNumberInLine()">David</button>
+                <button type="button" onclick="toggleNumberInLine()">Lukas</button>
+                <button type="button" onclick="toggleNumberInLine()">Mattias</button>
+                <button type="button" onclick="toggleNumberInLine()">Stanley</button>
+                <button type="button" onclick="toggleNumberInLine()">Tarzan</button>
+            </section>
+            <section id="display" class="hidden">
+                <h1>Din plats i kön:</h1>
+                <p></p>
+            </section>
+        </main>
+    </body>
+</html>

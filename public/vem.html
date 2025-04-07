@@ -10,23 +10,25 @@
         <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
         <link rel="manifest" href="site.webmanifest">
         <link href="index.css" rel="stylesheet" />
-    </head>
-    <script type="text/javascript">
-        function getLineNumber() {
-            const minCeiled = Math.ceil(24);
-            const maxFloored = Math.floor(108);
-            return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
-        }
+        <script type="text/javascript">
+            function getLineNumber() {
+                const minCeiled = Math.ceil(24);
+                const maxFloored = Math.floor(108);
+                return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
+            }
 
-        function toggleNumberInLine() {
-            const displayElement = document.querySelector("#display")
-            const optionsElement = document.querySelector("#options")
-            displayElement.querySelector("p").innerText = getLineNumber(24, 108);
-            displayElement.classList.toggle("hidden");
-            optionsElement.classList.toggle("hidden");
-            setTimeout(() => { location.href="/qr/" }, 4000);
-        }
-    </script>
+            function toggleNumberInLine() {
+                const displayElement = document.querySelector("#display")
+                const optionsElement = document.querySelector("#options")
+                displayElement.querySelector("p").innerText = getLineNumber(24, 108);
+                displayElement.classList.toggle("hidden");
+                optionsElement.classList.toggle("hidden");
+                if (document.referrer == "https://makavaf.al/qr/") {
+                    setTimeout(() => { location.href = "/qr/" }, 4000);
+                }
+            }
+        </script>
+    </head>
     <body>
         <main>
             <section id="options">

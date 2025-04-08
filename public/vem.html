@@ -11,20 +11,32 @@
         <link rel="manifest" href="site.webmanifest">
         <link href="index.css" rel="stylesheet" />
         <script type="text/javascript">
-            function getLineNumber() {
-                const minCeiled = Math.ceil(24);
-                const maxFloored = Math.floor(108);
+            function getRandomInteger(min, max) {
+                const minCeiled = Math.ceil(min);
+                const maxFloored = Math.floor(max);
                 return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
+            }
+
+            function getLineNumber() {
+                return getRandomInteger(24, 108)
             }
 
             function toggleNumberInLine() {
                 const displayElement = document.querySelector("#display")
                 const optionsElement = document.querySelector("#options")
-                displayElement.querySelector("p").innerText = getLineNumber(24, 108);
+                const paragraphElement = displayElement.querySelector("p")
+                paragraphElement.innerText = getLineNumber();
                 displayElement.classList.toggle("hidden");
                 optionsElement.classList.toggle("hidden");
                 if (document.referrer == "https://makavaf.al/qr/") {
                     setTimeout(() => { location.href = "/qr/" }, 4000);
+                } else {
+                    setInterval(
+                        () => {
+                            paragraphElement.innerText = Number.parseInt(paragraphElement.innerText) - 1
+                        },
+                        123 * getRandomInteger(4, 567),
+                    )
                 }
             }
         </script>
